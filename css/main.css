@@ -1,0 +1,422 @@
+/* soft reset do css */
+* {
+    margin: 0; /*margem nula, iniciar com eles zerados*/
+    padding: 0; /*borda interna*/
+    box-sizing: border-box; /* vai dizer para o navegador começa a contar o tamanho do elemento a partir da borda da caixa*/
+  }
+body {
+    background-image: url('../img/background.jpg');
+    font-family: 'Source Code Pro', monospace;
+    height: 100vh;
+    font-size: 12px;
+}
+/* se a tela tiver pelo menos 400px vai carregar estes estilos */
+@media (min-width: 300px) {
+    body {
+      font-size: 14px;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  }
+  
+  /* breakpoint */
+  @media (min-width: 600px) {
+    body {
+      background-attachment: fixed;
+      background-size: cover;
+      font-size: 18px;
+    }
+  }
+  
+  /* breakpoint */
+  @media (min-width: 1200px) {
+    body {
+      font-size: 20px;
+    }
+  }
+  
+  header {
+    display: flex;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+  } 
+
+.menu {
+    background-color: white; /*deixa o fundo branco da parte menu*/
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li {
+    list-style: none; /*tira o estilo de lista das palavras da classe menu*/
+}
+
+.menu a{
+    display: block;
+    padding: 10px 10px;
+    transition: background-color 500ms, color 500ms;
+}
+
+.menu a:active,
+.menu a:hover {
+  background-color: #001228;
+  color: white;
+}
+
+a {
+    color: #001228; /*alterar a cor do texto do menu*/
+    text-decoration: none; /*tira o underline do texto*/
+    
+}
+
+
+.titulo {
+    transform: scale(0.2) translateY(30vh);
+    opacity: 0;
+    animation: 1s ease 500ms animacaoTitulo forwards;
+  }
+  
+  @keyframes animacaoTitulo {
+    from {
+      transform: scale(1) translateY(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+.site-subtitle,
+.site-title {
+    color: whitesmoke;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 4em;
+    font-family: 'Oxanium', cursive;
+  }
+
+  /*.img-sobre {
+    margin-left: 1em;
+    border-radius: 50%;
+  }
+
+  .sobre .img-sobre {
+      clip-path: polygon(100% 0%, 100% 100%, 50% 0%, 100% 100%, 0% 100%, 0% 0%);
+      margin-left: 2em;
+    }  /*
+  
+/*  INÍCIO DA ABA SOBRE */
+.sobre,
+.projetos, 
+.contato
+ {
+  padding: 2em;
+  background-size: 100vh;
+  min-height: 100vh;
+  }
+  
+
+
+@media (min-width: 1400px) {
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1400px;
+    }
+  }
+
+.sobre {
+  background-size: 100vh;
+  min-height: 100vh;
+}
+
+.sobre h2,
+.experiencias h2,
+.projetos h2,
+.contato h2  {
+  font-family: 'Oxanium', cursive;
+  color: white;
+  margin-bottom: 1.5em;
+  margin-top: 0.5em;
+  font-size: 2em;
+  text-align: center;
+}
+
+.sobre .grid {
+  float: right;
+  margin-left: 1em;
+
+}
+
+.sobre p {
+  color: white;
+  text-indent: 1.4em;
+  margin-bottom: 1.4em;
+  text-align: justify;
+}
+
+.sobre a {
+  color: white;
+  text-decoration: underline;
+}
+
+  /* ABA EXPERIÊNCIAS */  
+  
+  .experiencias{
+      padding: 2em;
+  }
+      .timeline{
+        position: relative;
+        margin: 50px auto;
+        padding: 40px 0;
+        width: 1000px; 
+        box-sizing: border-box;
+      }
+      
+      .timeline:before{
+        content: ''; 
+        position: absolute; 
+        left: 50%; 
+        width: 2px; 
+        height: 100%; 
+        background: white;
+      }
+      
+      .timeline ul{
+        margin:0;
+        padding: 0; 
+      }
+      
+      .timeline ul li{
+        list-style: none; 
+        line-height: normal;
+        position: relative; 
+        width: 50%;
+        padding: 20px 40px; 
+        box-sizing: border-box; 
+      }
+      
+      .timeline ul li:nth-child(odd):before{
+        content: ''; 
+        position: absolute; 
+        top: 24px; 
+        right: -6px; 
+        width: 10px; 
+        height: 10px; 
+        background: #001228; 
+        border-radius: 50%; 
+        box-shadow: 0 0 0 5px white;
+      }
+      
+      .timeline ul li:nth-child(odd){
+        float: left; 
+        text-align: right; 
+        clear: both; 
+      }
+      
+      .timeline ul li:nth-child(even):before{
+        content: ''; 
+        position: absolute; 
+        top: 24px; 
+        left: -6px; 
+        width: 10px; 
+        height: 10px; 
+        background: #001228; 
+        border-radius: 50%; 
+        box-shadow: 0 0 0 5px white;
+      }
+      
+      .timeline ul li:nth-child(even){
+        float: right; 
+        text-align: left; 
+        clear: both; 
+      }
+      
+      .content{
+        padding-bottom: 20px; 
+      }
+      
+      .timeline ul li h3{
+        margin:0; 
+        padding: 0; 
+        font-weight: 600; 
+        color: whitesmoke;  
+      }
+      
+      .timeline ul li p{
+        margin: 10px 0 0; 
+        padding: 0; 
+        color: white
+      }
+      
+      .timeline ul li .time h4{
+        margin: 0; 
+        padding: 0; 
+        font-size: 16px; 
+      }
+      
+      .timeline ul li:nth-child(odd) .time{
+        position: absolute; 
+        top: 12px; 
+        right: -240px; 
+        margin: 0; 
+        padding: 8px 16px; 
+        background: white; 
+        border-radius: 20px; 
+      }
+      
+      .timeline ul li:nth-child(even) .time{
+        position: absolute; 
+        top: 12px; 
+        left: -240px; 
+        margin: 0; 
+        padding: 8px 16px; 
+        background: white; 
+        border-radius: 20px; 
+      }
+
+@media (max-width: 1000px){
+  .timeline{
+    width: 100%; 
+  }
+}
+
+@media (max-width: 767px){
+  .experiencias h2{
+    text-align: center; 
+    font-size: 40px; 
+    padding: 0 20px; 
+  }
+
+  .timeline{
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .timeline:before{
+    left: 20px;
+  }
+
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even){
+    width: 100%;
+    text-align: left;
+    padding-left: 50px; 
+    padding-bottom: 50px; 
+  }
+
+  .timeline ul li:nth-child(odd):before,
+  .timeline ul li:nth-child(even):before{
+    top: -18px; 
+    left: 16px;  
+  }
+
+  .timeline ul li:nth-child(odd) .time,
+  .timeline ul li:nth-child(even) .time{
+    top: -30px;
+    left: 50px;
+    right: inherit;
+  }
+}
+      /* FIM ABA EXPERIÊNCIAS */
+      
+      /*  INÍCIO DA ABA PROJETOS */
+
+      .projetos{
+        background-size: 100vh;
+        min-height: 100vh;
+      }
+      .projetos .grid  {
+        display: grid;
+        gap: 1.4em;
+      }
+      
+      @media (min-width: 800px) {
+        .projetos .grid {
+          grid-template-columns: repeat(2, 400px);
+        }
+      }
+      
+      @media (min-width: 1080px) {
+        .projetos .grid {
+          grid-template-columns: repeat(2, 400px);
+          justify-content: center;
+        }
+      }
+      
+      .proejtos figure {
+        text-align: center;
+      }
+      
+      .img-projetos {
+        height: 200px;
+        width: 355px;
+        transition: transform 500ms;
+      }
+      
+      .img-projetos:hover {
+        transform: scale(1.3);
+      }
+
+      .certificados figure {
+        text-align: center;
+      }
+      
+      .img-certificados {
+        height: 200px;
+        width: 355px;
+        transition: transform 500ms;
+      }
+      
+      .img-certificados:hover {
+        transform: scale(1.3);
+      }
+ /* FIM DA SEÇÃO PROJETOS */
+      
+  .contato .icons {
+    text-align: center;
+    display: grid;
+    gap: 1.4em;
+  }
+
+  .contato a {
+    color: whitesmoke;
+    font-size: 4em;
+    transition: text-shadow 1s;
+  }
+  
+  .contato a:active,
+  .contato a:hover  {
+    text-decoration: none;
+    text-shadow: 0px 0px 10px rgba(255,255,255,.5);
+  }
+@media (min-width: 500px){
+  .contato .grid{
+    grid-template-columns: repeat(3, 120px);
+  }
+}
+
+@media (min-width: 630px){
+  .contato .grid{
+    grid-template-columns: repeat(3, 220px);
+  }
+}
+
+@media (min-width: 800px){
+  .contato .grid{
+    grid-template-columns: repeat(5, 100px);
+    justify-content: center;
+  }
+}
